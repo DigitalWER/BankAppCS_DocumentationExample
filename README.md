@@ -15,11 +15,11 @@
 
 
 ## Description <a name="description"></a>
-<div align="adjust">BankApp is an application based on banking functionality. It is designed as a window application using .NET technology. It allows the creation of a new user through a registration procedure and after logging in, there is an option to open a bank account in the chosen currency and  perform financial operations on it. Banking functions such as withdraw or deposit a money amount, the ability to create multiple bank accounts and visibility of user details and its bank accounts in the main menu are included inside the application.</div>
+<div align="adjust">BankApp is an application based on banking functionality. It is designed as a window application using .NET technology. It allows the creation of a new user through a registration procedure and after logging in, there is an option to open a bank account in the chosen currency and perform financial operations on it. Banking functions such as withdraw or deposit a money amount, the ability to create multiple bank accounts and visibility of user details and its bank accounts in the main menu are included inside the application.</div>
 
 ## Features <a name="features"></a>
 ### Operations between application windows <a name="operationsWindows"></a>
-<div align="adjust">Each window is connected with each other by using buttons. For each of them an appropriate function for the next or the previous window is implemented, which allows moving between windows. The buttons are labelled in the visible application window according to their function.</div>
+<div align="adjust">Each window relates to each other by using buttons. For each of them an appropriate function for the next or the previous window is implemented, which allows moving between windows. The buttons are labelled in the visible application window according to their function.</div>
 
 #### Example 1 – movement between windows, start window -> sign up window
 ```groovy
@@ -65,8 +65,8 @@ private void openCreateAccountWindow(object sender, RoutedEventArgs e)
 
 
 
-### LogIn window <a name="logInWindow"></a>
-<div align="adjust">The initial window of the application is the login window. To take full advantage of the designed functionality it is necessary to log into the application. In order to test the application, one permanent user has been saved, whose access with username and password is respectively: username: admin, password: admin (it is initialised in the constructor of the start window)</div>
+### Log In window <a name="logInWindow"></a>
+<div align="adjust">The initial window of the application is the login window. To take full advantage of the designed functionality it is necessary to log into the application. In order to test the application, one permanent user has been saved, whose access with username and password is respectively: username: admin, password: admin (it is initialized in the constructor of the start window)</div>
 
 ```groovy
 public StartWindowSignIn()
@@ -80,10 +80,10 @@ public StartWindowSignIn()
 public User(string firstName, string lastName, int phoneNumber, string email, string username, string password)
 ```
 
-### User LogIn procedure <a name="userLogIn"></a>
-<div align="adjust">The applied textboxes takes the input data from the application user (username and password) in purpose to verify it with the previously created user account. The entered data are compared with the data existing in the list (inside the User class). If the data matches, the login is successful and the user is transferred into the main user window, otherwise a message about incorrect login data is shown.</div>
+### User Log In procedure <a name="userLogIn"></a>
+<div align="adjust">The applied textboxes take the input data from the application user (username and password) in purpose to verify it with the previously created user account. The entered data are compared with the data existing in the list (inside the User class). If the data matches, the login is successful and the user is transferred into the main user window, otherwise a message about incorrect login data is shown.</div>
   
-#### User LogIn procedure
+#### User Log In procedure
 ```groovy
 private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
@@ -109,7 +109,7 @@ private void SignInButton_Click(object sender, RoutedEventArgs e)
 
 
 ### New User registration window <a name="userRegistration"></a>
-<div align="adjust">The data entered by the person that creates the account are retrieved by the application using appropriately described textboxes. After that the entered data are validated (currently only the password and phone number are being verified). If the user registration is correct, the registration window is closed with an appropriate message about a correct registration. Otherwise a message about possibly incorrectly filled data is displayed. Correctly entered data are called in the constructor of the user class to create a new user, and then it is saved to the list of registered users. After creating a new user it is possible to log in to the application and use the banking functionality.</div>
+<div align="adjust">The data entered by the person that creates the account are retrieved by the application using appropriately described textboxes. After that, the entered data are validated (currently only the password and phone number are being verified). If the user registration is correct, the registration window is closed with an appropriate message about a correct registration. Otherwise, a message about possibly incorrectly filled data is displayed. Correctly entered data are called in the constructor of the user class to create a new user, and then it is saved to the list of registered users. After creating a new user, it is possible to log in to the application and use the banking functionality.</div>
 
 #### Registration Window code:
 ```groovy
@@ -155,9 +155,9 @@ The main menu is capable of performing operations on a given bank account - with
 
   #### Withdraw/Deposit operations
 
-Money operations are implemented in a way that uses a comboBox, a field for typing the appropriate amount of money and a button which confirms the operation. To perform an operation it is also necessary to select an account from the datagrid where all user accounts are displayed.
-    - With the option of depositing funds the money is added to the bank account. 
-    - When the option of withdrawing funds from the selected account, a verification is performed whether the user has sufficient funds on the chosen account. In case of insufficient funds on the account after an attempt to perform an operation an appropriate information message pops up
+Money operations are implemented in a way that uses a comboBox, a field for typing the appropriate amount of money and a button which confirms the operation. To perform an operation, it is also necessary to select an account from the datagrid where all user accounts are displayed.
+    - With the option of depositing funds, the money is added to the bank account. 
+    - When the option of withdrawing funds from the selected account, a verification is performed whether the user has sufficient funds on the chosen account. In case of insufficient funds on the account after an attempt to perform an operation, an appropriate information message pops up
 Successful completion of the operation will result in the information about the success of the transaction as well as refreshing and updating the window with information about the account(s).
 #### Withdraw/Deposit code:
 ```groovy
